@@ -2,7 +2,7 @@
 # ANALYSIS PIPELINE (Using GATK 4.1.4)
 
 ## Quality control (using FastQC)
-We used this to get the detailed report of the sequence reads\
+We used this to get the detailed report of the sequence reads
   >>a. Quality Assessment\
   >>b. Detection of Adapter Sequences\
   >>c. Base Composition Analysis\
