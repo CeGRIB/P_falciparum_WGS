@@ -3,7 +3,7 @@
 
 ## Quality control (Using FastQC)
 We used this to get the detailed report of the sequence reads: \
-  a. Quality Assessment\
+  >a. Quality Assessment\
   b. Detection of Adapter Sequences\
   c. Base Composition Analysis\
   d. Sequence Duplication Levels\
