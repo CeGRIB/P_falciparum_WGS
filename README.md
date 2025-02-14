@@ -22,7 +22,7 @@ Trimming can help reduce background noise and improve the overall quality of the
 >> Comparative analysis for identification of variants
 
 ### Deduplication (using MarkDuplicatesSpark function)
-Removing duplicate:\
+>> Removing duplicate:\
 >> Improves data integrity\
 >> Improves performance\
 >> Simplifies data management\
