@@ -2,8 +2,8 @@
 # ANALYSIS PIPELINE
 
 ## Quality control (Using FastQC)
-We used this to get the detailed report of the sequence reads:
-  a. Quality Assessment
+We used this to get the detailed report of the sequence reads: \n
+  a. Quality Assessment\n
   b. Detection of Adapter Sequences   
   c. Base Composition Analysis
   d. Sequence Duplication Levels
