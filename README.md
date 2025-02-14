@@ -55,5 +55,9 @@ Removing duplicate:\
 
 ## SelectVariants
 >>Select a subset of variants from a VCF file\
->>Select variants based on criteria like their type (e.g. INDELs or SNPs only), evidence of mendelian violation, filtering status, allelicity, etc.
+>>Select variants based on criteria like their type (e.g. INDELs or SNPs only), evidence of Mendelian violation, filtering status, allelicity, etc.
+
+## Annotation (using snpEFF)
+>>Variant Interpretation\
+>> This aids in interpreting genetic variants by linking them to known phenotypes, diseases, or traits, which is crucial for clinical applications.
 
