@@ -13,9 +13,9 @@ The output includes visual plots that make it easier to interpret the quality me
 
 
 ## Trimming (using Trimmomatic)
-  a. Removing Low-Quality Bases\
-  b. Eliminating Adapter Sequences\
-  c. Reducing Noise\
+  >>a. Removing Low-Quality Bases\
+  >>b. Eliminating Adapter Sequences\
+  >>c. Reducing Noise\
 Trimming can help reduce background noise and improve the overall quality of the data, leading to more accurate results in analyses such as variant calling and assembly.
 
 ## Alignment of reads to the _P. f_ 3D7 version 3 reference genome 3D7 version 3 (using bwa)
