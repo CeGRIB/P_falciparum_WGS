@@ -1,0 +1,27 @@
+#!/bin/bash
+
+gatk VariantRecalibrator \
+     -R ./ref/Pfalciparum.genome.fasta \
+     -V ./vcf/all_data.vcf.gz \
+     -AS \
+     --resource:hapmap,known=false,training=true,truth=true,prior=15.0 ./ref/3d7_hb3.combined.final.vcf.gz \
+     -an QD -an MQRankSum -an ReadPosRankSum -an FS -an SOR \
+     -mode SNP \
+     --trust-all-polymorphic \
+     -O ./vcf/all_data.recal \
+     --tranches-file ./vcf/all_data_output.tranches \
+     --rscript-file ./vcf/all_data_output.plots.R
+     
+     
+gatk ApplyVQSR \
+     -R ./ref/Pfalciparum.genome.fasta \
+     -V ./vcf/all_data.vcf.gz \
+     -O ./vcf/final_vcf.vcf.gz \
+     -AS \
+     --tranches-file ./vcf/all_data_output.tranches \
+     --recal-file ./vcf/all_data.recal \
+     -mode SNP
+     
+     
+     
+    

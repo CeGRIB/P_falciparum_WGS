@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Define input and output directories
+input_dir="./aligned_reads"
+output_dir="./mark_dup_file"
+
+# Create output directory if it doesn't exist
+mkdir -p "$output_dir"
+
+# Array of sample names (without extensions)
+samples=("AG006" "AG016" "AG040" "AG054" "AG058" "MT012" "MT017" "MT020" "MT022" "MT033" "MT037" "MT042" "MT047" "MT055" "MT058" "MT059" "MT060" "MT07")  # Add your sample names here
+for sample in "${samples[@]}"; do
+    gatk MarkDuplicatesSpark \
+        -I "${input_dir}/${sample}_aligned.sam" \
+        -O "${output_dir}/${sample}_sorted_dedup.bam" \
+        -M "${output_dir}/${sample}_marked_dup_metrics.txt" \
+        --remove-sequencing-duplicates
+done
+

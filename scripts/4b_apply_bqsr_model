@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Define input and output directories
+input_dir="./fixed_bam_files"
+output_dir="./bam_BQSR_applied"
+ref_genome="./ref/Pfalciparum.genome.fasta"
+bqsr_table_dir="./BQSR_table"
+
+# Create output directory if it doesn't exist
+mkdir -p "$output_dir"
+
+# Array of sample names (without extensions)
+samples=("AG006" "AG016" "AG040" "AG054" "AG058" "MT012" "MT017" "MT020" "MT022" "MT033" "MT037" "MT042" "MT047" "MT055" "MT058" "MT059" "MT060" "MT07")  # Add your sample names here
+for sample in "${samples[@]}"; do
+    gatk ApplyBQSR \
+        -I "${input_dir}/${sample}_fixed.bam" \
+        -R "$ref_genome" \
+        --bqsr-recal-file "${bqsr_table_dir}/${sample}_recal_data.table" \
+        -O "${output_dir}/${sample}_sorted_dedup_bqsr.bam"
+done
+

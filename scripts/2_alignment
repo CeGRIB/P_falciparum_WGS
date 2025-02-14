@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Define input and output directories
+input_dir="./trimmed"
+output_dir="aligned_reads"
+ref_genome="./ref/Pfalciparum.genome.fasta"
+
+# Create output directory if it doesn't exist
+mkdir -p "$output_dir"
+
+# Array of sample names (without extensions)
+samples=("AG006" "AG016" "AG040" "AG054" "AG058" "MT012" "MT017" "MT020" "MT022" "MT033" "MT037" "MT042" "MT047" "MT055" "MT058" "MT059" "MT060" "MT07")  # Add sample names here
+
+for sample in "${samples[@]}"; do
+    bwa mem -t 23 -R "@RG\tID:${sample}\tPL:ILLUMINA\tSM:${sample}" \
+    "$ref_genome" \
+    "${input_dir}/${sample}_R1_paired.fq.gz" \
+    "${input_dir}/${sample}_R2_paired.fq.gz" \
+    > "${output_dir}/${sample}_aligned.sam"
+done
+

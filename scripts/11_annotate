@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+java -jar ../snpEff_v4_3t_core/snpEff/snpEff.jar -v malgen ../SNP_filtered_variant.vcf.gz > SNP_anno.vcf
+
+

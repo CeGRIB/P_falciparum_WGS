@@ -1,0 +1,15 @@
+#!/bin/bash
+
+##select SNP    
+gatk SelectVariants -R ./ref/Pfalciparum.genome.fasta \
+     -V ./vcf/final_vcf.vcf.gz \
+     --select-type SNP \
+     -O ./vcf/SNP_variant.vcf.gz
+     
+     
+##select indel    
+gatk SelectVariants -R ./ref/Pfalciparum.genome.fasta \
+     -V ./vcf/final_vcf.vcf.gz \
+     --select-type INDEL \
+     -O ./vcf/INDEL_variant.vcf.gz
+     

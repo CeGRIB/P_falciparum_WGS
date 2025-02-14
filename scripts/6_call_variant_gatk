@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Define input and output directories
+input_dir="./bam_BQSR_applied"
+output_dir="./g_vcf"
+ref_genome="./ref/Pfalciparum.genome.fasta"
+
+# Create output directory if it doesn't exist
+mkdir -p "$output_dir"
+
+# Array of sample names (without extensions)
+samples=("AG006" "AG016" "AG040" "AG054" "AG058" "MT012" "MT017" "MT020" "MT022" "MT033" "MT037" "MT042" "MT047" "MT055" "MT058" "MT059" "MT060" "MT07")  # Add your sample names here
+for sample in "${samples[@]}"; do
+    gatk HaplotypeCaller \
+        -R "$ref_genome" \
+        -I "${input_dir}/${sample}_sorted_dedup_bqsr.bam" \
+        -O "${output_dir}/${sample}_raw_variant.g.vcf" \
+        -contamination 0 \
+        -ERC GVCF \
+        -G StandardAnnotation \
+        -G AS_StandardAnnotation \
+        -G StandardHCAnnotation
+done
+

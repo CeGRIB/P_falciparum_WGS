@@ -1,0 +1,33 @@
+#!/bin/bash
+
+
+## 2Combine all raw vcf
+##run inside the vcf directory
+###this combine all genomic vcf, ready variant filteration (filter out only the variants)
+
+mkdir vcf
+
+gatk CombineGVCFs -R ./ref/Pfalciparum.genome.fasta \
+    --variant ./g_vcf/AG006_raw_variant.g.vcf \
+    --variant ./g_vcf/AG016_raw_variant.g.vcf \
+    --variant ./g_vcf/AG040_raw_variant.g.vcf \
+    --variant ./g_vcf/AG054_raw_variant.g.vcf \
+    --variant ./g_vcf/AG058_raw_variant.g.vcf \
+    --variant ./g_vcf/MT012_raw_variant.g.vcf \
+    --variant ./g_vcf/MT017_raw_variant.g.vcf \
+    --variant ./g_vcf/MT020_raw_variant.g.vcf \
+    --variant ./g_vcf/MT022_raw_variant.g.vcf \
+    --variant ./g_vcf/MT033_raw_variant.g.vcf \
+    --variant ./g_vcf/MT037_raw_variant.g.vcf \
+    --variant ./g_vcf/MT042_raw_variant.g.vcf \
+    --variant ./g_vcf/MT047_raw_variant.g.vcf \
+    --variant ./g_vcf/MT055_raw_variant.g.vcf \
+    --variant ./g_vcf/MT058_raw_variant.g.vcf \
+    --variant ./g_vcf/MT059_raw_variant.g.vcf \
+    --variant ./g_vcf/MT060_raw_variant.g.vcf \
+    --variant ./g_vcf/MT07_raw_variant.g.vcf \
+    -O ./vcf/combined_vcf.vcf \
+    -G StandardAnnotation -G AS_StandardAnnotation
+    
+
+    

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+##Genotype (call variants)
+
+
+gatk GenotypeGVCFs -R ./ref/Pfalciparum.genome.fasta \
+     -V ./vcf/combined_vcf.vcf \
+     -O ./vcf/all_data.vcf.gz \
+     -G StandardAnnotation \
+     -G AS_StandardAnnotation 
+
+
+
+
