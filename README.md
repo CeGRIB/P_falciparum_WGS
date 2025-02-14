@@ -1,5 +1,5 @@
 # P_falciparum_WGS
-# ANALYSIS PIPELINE (Using GATK 4.1.4)
+# ANALYSIS PIPELINE (Using GATK 4.4.0.0)
 
 ## Quality control (using FastQC)
 We used this to get the detailed report of the sequence reads
