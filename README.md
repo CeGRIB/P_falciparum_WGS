@@ -39,15 +39,21 @@ Removing duplicate:\
 
 ## Variant calling (HaplotypeCaller)
 >>The HaplotypeCaller is capable of calling SNPs and indels simultaneously.\
->>In the GVCF workflow, HaplotypeCaller runs per sample to generate an intermediate GVCF (not to be used in final analysis), which can then be used in GenotypeGVCFs for joint genotyping of multiple samples in a very efficient way.
+>>In the GVCF workflow, HaplotypeCaller runs per sample to generate an intermediate GVCF (not to be used in the final analysis), which can then be used in GenotypeGVCFs for joint genotyping of multiple samples in a very efficient way.
 
 ## Combine GVCFs 
 >>This combines per-sample gVCF files produced by HaplotypeCaller into a multi-sample gVCF file\
->>**CombineGVCFs** is meant to be used for merging of GVCFs that will eventually be input into GenotypeGVCFs.
+>>**CombineGVCFs** is meant to be used for merging GVCFs that will eventually be input into GenotypeGVCFs.
 
 ## GenotypeGVCFs
 >>Perform joint genotyping on one or more samples pre-called with HaplotypeCaller.\
 >>This tool is designed to perform joint genotyping on a single input, which may contain one or many samples. In any case, the input samples must possess genotype likelihoods produced by **HaplotypeCaller** with `-ERC GVCF` or `-ERC BP_RESOLUTION`
 
+## VariantRecalibrator
+>>Build a recalibration model to score variant quality for filtering purposes\
+>>This model describes the relationship between variant annotations (such as QD, MQ and ReadPosRankSum, for example) and the probability that a variant is a true genetic variant versus a sequencing or data processing artefact.
 
+## SelectVariants
+>>Select a subset of variants from a VCF file\
+>>Select variants based on criteria like their type (e.g. INDELs or SNPs only), evidence of mendelian violation, filtering status, allelicity, etc.
 
