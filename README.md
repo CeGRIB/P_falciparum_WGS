@@ -3,12 +3,12 @@
 
 ## Quality control (Using FastQC)
 We used this to get the detailed report of the sequence reads: \
-  >a. Quality Assessment\
-  b. Detection of Adapter Sequences\
-  c. Base Composition Analysis\
-  d. Sequence Duplication Levels\
-  e. GC Content Distribution\
-  f. Overall Data Integrity\
+  >>a. Quality Assessment\
+  >>b. Detection of Adapter Sequences\
+  >>c. Base Composition Analysis\
+  >>d. Sequence Duplication Levels\
+  >>e. GC Content Distribution\
+  >>f. Overall Data Integrity\
 The output includes visual plots that make it easier to interpret the quality metrics at a glance.
 
 
