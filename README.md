@@ -38,9 +38,16 @@ Removing duplicate:\
 >>_Note that these quality filters are specific to Illumina data; for additional information, please see the corresponding.
 
 ## Variant calling (HaplotypeCaller)
->>The HaplotypeCaller is capable of calling SNPs and indels simultaneously.
+>>The HaplotypeCaller is capable of calling SNPs and indels simultaneously.\
 >>In the GVCF workflow, HaplotypeCaller runs per sample to generate an intermediate GVCF (not to be used in final analysis), which can then be used in GenotypeGVCFs for joint genotyping of multiple samples in a very efficient way.
 
+## Combine GVCFs 
+>>This combines per-sample gVCF files produced by HaplotypeCaller into a multi-sample gVCF file\
+>>**CombineGVCFs** is meant to be used for merging of GVCFs that will eventually be input into GenotypeGVCFs.
+
+## GenotypeGVCFs
+>>Perform joint genotyping on one or more samples pre-called with HaplotypeCaller.\
+>>This tool is designed to perform joint genotyping on a single input, which may contain one or many samples. In any case, the input samples must possess genotype likelihoods produced by **HaplotypeCaller** with `-ERC GVCF` or `-ERC BP_RESOLUTION`
 
 
 
