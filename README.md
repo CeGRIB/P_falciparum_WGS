@@ -1,4 +1,4 @@
-# **Plasmodium falciparum** WGS
+# **_Plasmodium falciparum_** WGS
 ## ANALYSIS PIPELINE (Using GATK 4.4.0.0)
 
 ### Quality control (using FastQC)
